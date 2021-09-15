@@ -5,14 +5,12 @@ function addMovie(e) {
     e.preventDefault();
 
     const inputField = document.querySelector("input");
-    console.log(inputField);
 
     const movie = document.createElement("li");
     const movieTitle =document.createElement("span");
 
-    movieTitle.textContent = inputField.addEventListener("click", crossOffMovie);
-
-    console.log(movieTitle);
+    movieTitle.textContent = inputField.value;
+    movieTitle.addEventListener("click", crossOffMovie);
 
     movie.appendChild(movieTitle);
     const deleteBtn = document.createElement("button");
@@ -23,7 +21,7 @@ function addMovie(e) {
 
     document.querySelector("ul").appendChild(movie);
 
-    inputField = " ";
+    inputField = "";
 }
 
 document.querySelector("form").addEventListener("submit", addMovie);
